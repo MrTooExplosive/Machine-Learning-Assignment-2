@@ -115,13 +115,13 @@ for instance in tests:
         sample.append(2)
 
     prediction = clf.predict_proba([sample])[0]
-    clasification = "Unsure"
+    predicter = "Unsure"
     conf = "NA"
     if prediction[0] >= .75:
-        classification = "No"
+        predicter = "No"
         conf = prediction[0]
     elif prediction[1] >= .75:
-        classification = "Yes"
+        predicter = "Yes"
         conf = prediction[1]
 
-    print(instance[0],instance[1], instance[2] if instance[1] == "Overcast" else '\t' + instance[2], '\t' + instance[3], '\t' + instance[4], clasification, '\t' + str(conf if conf == "NA" else round(conf, 3)),sep='\t')
+    print(instance[0],instance[1], instance[2] if instance[1] == "Overcast" else '\t' + instance[2], '\t' + instance[3], '\t' + instance[4], predicter, '\t' + str(conf if conf == "NA" else round(conf, 3)),sep='\t')
